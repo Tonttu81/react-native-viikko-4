@@ -38,6 +38,7 @@ export default function List() {
   };
 
   const toggleDone = (id: string) => {
+    // map makes a new list, if list id matches given id, update done state
     setTodoItems(prev =>
       prev.map(item =>
         item.id === id
