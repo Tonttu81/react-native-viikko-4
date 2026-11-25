@@ -16,7 +16,7 @@ export default function Item({ id, title, done, onClick }: TodoItemProps) {
   // so used colors in addition to line-through to indicate when item is done
   return (
     <Pressable onPress={() => onClick(id)}>
-      <Text style={[styles.text, done && styles.done]}>
+      <Text style={done ? styles.done : styles.inProgress}>
         {title}
       </Text>
     </Pressable>
@@ -24,11 +24,12 @@ export default function Item({ id, title, done, onClick }: TodoItemProps) {
 }
 
 const styles = StyleSheet.create({
-  text: {
+  inProgress: {
     fontSize: 25,
     color: 'red'
   },
   done: {
+    fontSize: 25,
     color: 'green',
     textDecorationLine: 'line-through',
     textDecorationStyle: 'solid',
