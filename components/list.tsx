@@ -27,7 +27,7 @@ export default function List() {
   const addItem = () => {
     if (!title) return;
 
-    const newItem = {
+    const newItem: TodoItem = {
       id: Date.now().toString(),
       title: title,
       done: false
